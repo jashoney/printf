@@ -30,6 +30,7 @@ int (*structarr(char id_type))(va_list)
 		{
 			break;
 		}
-		return (mystruct[index].f);
+
 	}
+		return (mystruct[index].f);
 }
