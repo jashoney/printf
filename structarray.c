@@ -6,7 +6,7 @@
  * Return: pointer to function
  */
 
-int (*structarr(const char *format))(va_list)
+int (*structarr(char *format))(va_list)
 {
 
 	int index;
@@ -15,10 +15,15 @@ int (*structarr(const char *format))(va_list)
 		{"i", print_int},
 		{"s", print_string},
 		{"d", print_int},
-		{NULL, NULL},
+		{"x", print_hex},
+		{"u", print_uns),
+		("x", print_hex),
+		("o", print_oct),
+		("X", print_hex),
+		{'\0', NULL},
 	};
 
-	for (index = 0; mystruct[index].ch != NULL; index++)
+	for (index = 0; mystruct[index].ch != '\0'; index++)
 	{
 		if (*(mystruct[index].ch) == *format)
 		{
