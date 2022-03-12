@@ -8,22 +8,31 @@
  */
 int print_int(va_list args)
 {
-        int number, count = 0;
+        int i = 0, count = 0, init_number; 
+        unsigned int number = 0;
+	int numarray[20];
 
-        number = va_arg(args, int);
-        if (number < 0)
+	init_number = va_arg(args, int);
+        if (init_number < 0)
         {
                 _putchar('-');
                 count++;
-                number = number * -1;
+                number = init_number * -1;
         }
+	else
+		number = init_number;
         while (number > 9)
         {
-                putchar(number % 10 + '0');
+                numarray[i] = number % 10;
                 count++;
+		i++;
                 number = number / 10;
         }
-        _putchar(number + '0');
-        count++;
+	numarray[i] = number;
+	while (i >= 0)
+	{
+		_putchar(numarray[i] + '0');
+		i--;
+	}
         return (count);
 }
