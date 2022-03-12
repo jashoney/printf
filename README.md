@@ -1,4 +1,4 @@
-# PRINTF
+#printf
 -----------------
 ## This project was completed by James Honey and Declan Noble as apart of
 the holberton low level programming curriculum.
