@@ -18,20 +18,20 @@ int _printf(const char *format, ...)
 	va_start (args, format);			/* start moving through vargs after format */
 	for (i = 0; format[i] != '\0'; i++)		/* move across format */
 	{	
-		count++;
-		if (format[i] == '%')
+		count++;				/* this saves lines in _printf, remove if next char is an identifier */
+		if (format[i] == '%')			/* if yes, check the next char in format to decdide what to do */
 		{
 			if (format[i + 1] == '%' || format[i + 1] == '\0')  /* next char is % or end of string */
 			{
 				_putchar(format[i]);		/* print the % */
 				if (format[i + 1] == '\0')	/* stop if at end of string */
 					return (count);
-				i++;				/* ignore the second % */
+				i++;				/* next char = %, but don't print it */
 			}
 			else 					/* check for identifier */
 			{
-				f = structarr(format[i + 1]);   /* if f not null then it contains the function to call */
-				if (f != NULL)
+				f = structarr(format[i + 1]);   /* set f to a function or NULL */
+				if (f != NULL)			/* if f is not NULL it contains the function to use */
 				{	
 					count = count - 1;		/* count now doesn't include the % */
 					count = count + f(args);	/* count increased by length of print by function call */
@@ -45,5 +45,5 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);  		/* print current char in string format */
 	}
 	va_end(args);					/* free up the va_list */
-	return (count);
+	return (count);					/* _printf returns the total of the chars printed */
 }

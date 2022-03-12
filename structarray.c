@@ -15,10 +15,11 @@ int (*structarr(char id_type))(va_list)
 		{'i', print_int},
 		{'s', print_string},
 		{'d', print_int},
-/*		{'x', print_hex},
+		{'b', print_bin},
+		{'x', print_hex},
 		{'u', print_uns},
 		{'o', print_oct},
-		{'X', print_hex},
+/*		{'X', print_hex},
 		{'p', print_void},*/
 		{'\0', NULL},
 	};
@@ -29,7 +30,6 @@ int (*structarr(char id_type))(va_list)
 		{
 			break;
 		}
-
 	}
 	return (mystruct[index].f);
 }
