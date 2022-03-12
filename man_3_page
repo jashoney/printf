@@ -1,12 +1,11 @@
-#PRINTF
+PRINTF
 
-##NAME
+NAME
 printf
 
-##SYNOPSIS
+SYNOPSIS
 #include "main.h"
 
-int
 int _printf(const char *format, ...);
 
 ##DESCRIPTION
@@ -16,29 +15,19 @@ The printf function produces output according to included formatting.
 ###FORMAT SPECIFIERS
 
 d,
-
 prints in a decimal notation
 --------------
-
 i,
-
 prints in an integer notation
 ---------------
-
 u,
-
 prints in unsigned notation
 ----------------
-
 o,
 The argument is printed in octal notation
 -------------------
-
 x,X
-
 prints in unsigned hexadecimal notation
 -------------------
-
 b,
-
 prints in binary notation
