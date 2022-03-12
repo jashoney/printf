@@ -15,8 +15,8 @@ int (*structarr(char id_type))(va_list)
 		{'i', print_int},
 		{'s', print_string},
 		{'d', print_int},
-		{'b', print_bin},
-		{'x', print_hex},
+/*		{'b', print_bin},*/
+		{'x', print_u_hex},
 		{'u', print_uns},
 		{'o', print_oct},
 /**		{'X', print_hex},
