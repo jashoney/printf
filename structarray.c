@@ -19,9 +19,9 @@ int (*structarr(char id_type))(va_list)
 		{'x', print_hex},
 		{'u', print_uns},
 		{'o', print_oct},
-/*		{'X', print_hex},
-		{'p', print_void},*/
-		{'\0', NULL},
+/**		{'X', print_hex},
+ *		{'p', print_void},
+ */		{'\0', NULL},
 	};
 
 	for (index = 0; mystruct[index].ch != '\0'; index++)
