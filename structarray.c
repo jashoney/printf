@@ -16,10 +16,11 @@ int (*structarr(char *format))(va_list)
 		{"s", print_string},
 		{"d", print_int},
 		{"x", print_hex},
-		{"u", print_uns),
-		("x", print_hex),
-		("o", print_oct),
-		("X", print_hex),
+		{"u", print_uns},
+		{"x", print_hex},
+		{"o", print_oct},
+		{"X", print_hex},
+		{"p", print_void},
 		{'\0', NULL},
 	};
 
