@@ -8,15 +8,35 @@ the holberton low level programming curriculum.
 All prototypes can be viewed in the main.h file also.
 
 `int _printf(const char *format, ...);`
+
+
 `int (*structarr(char ch))(va_list);`
+
+
 `int print_char(va_list vargs);`
+
+
 `int print_string(va_list vargs);`
+
+
 `int _putchar(char c);`
+
+
 `int print_int(va_list args);`
+
+
 `int print_uns(va_list args);`
+
+
 `int print_oct(va_list args);`
+
+
 `int print_bin(va_list args);`
+
+
 `int print_l_hex(va_list args);`
+
+
 `int print_u_hex(va_list args);`
 -----------------
 # Program compilation
