@@ -2,11 +2,11 @@
 
 /**
  * structarr - checks for valid specifier
- *@format: character to check
+ *@id_type: character to check
  * Return: pointer to function
  */
 
-int (*structarr(char *format))(va_list)
+int (*structarr(char id_type))(va_list)
 {
 
 	int index;
@@ -26,7 +26,7 @@ int (*structarr(char *format))(va_list)
 
 	for (index = 0; mystruct[index].ch != '\0'; index++)
 	{
-		if (*(mystruct[index].ch) == *format)
+		if (*(mystruct[index].ch) == id_type)
 		{
 			break;
 		}
