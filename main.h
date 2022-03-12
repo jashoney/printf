@@ -4,11 +4,17 @@
 #include <stdarg.h>
 #include <stdio.h>
 
+/**
+ * struct funcstruct - type of structure
+ *@ch: pointer to argument
+ * @f: pointer to function of argument
+ */
+
 typedef struct funcstruct
 {
 	char *ch;
 	int (*f)(va_list);
-}func_struct;
+} func_struct;
 int (*structarr(const char *format))(va_list);
 int print_char(va_list *vargs);
 int print_string(va_list *vargs);
