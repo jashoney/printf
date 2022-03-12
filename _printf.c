@@ -9,13 +9,13 @@
 
 int _printf(const char *format, ...)
 {
-	int count = 0, i = 0, j = 0;			/* we return (count = strlen(format)) + loop variables */
+	int count = 0, i = 0;				/* we return (count = strlen(format)) + loop variables */
 	int (*f)(va_list);				/* f is a ptr to a function that takes a va_list type as input and returns an int */
 	va_list args;					/* args is of type va_list */
 
 	if (format == NULL)				/* test format for NULL */
 		return (-1);
-	va_start(args, format);			/* start moving through vargs after format */
+	va_start(args, format);				/* start moving through vargs after format */
 	for (i = 0; format[i] != '\0'; i++)		/* move across format */
 	{
 		count++;				/* this saves lines in _printf, remove if next char is an identifier */
