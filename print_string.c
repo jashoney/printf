@@ -8,17 +8,17 @@
  */
 int print_string(va_list args)
 {
-        char *c, count = 0;
+	char *c, count = 0;
 
-        c = va_arg(args, char *);
-        if (c != NULL)
-        {
-                while (*c != '\0')
-                {
-                        _putchar(*c);
-                        c++;
-                        count++;
-                }
-        }
-        return (count);
+	c = va_arg(args, char *);
+	if (c != NULL)
+	{
+		while (*c != '\0')
+		{
+			_putchar(*c);
+			c++;
+			count++;
+		}
+	}
+	return (count);
 }

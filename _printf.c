@@ -15,9 +15,9 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)				/* test format for NULL */
 		return (-1);
-	va_start (args, format);			/* start moving through vargs after format */
+	va_start(args, format);			/* start moving through vargs after format */
 	for (i = 0; format[i] != '\0'; i++)		/* move across format */
-	{	
+	{
 		count++;				/* this saves lines in _printf, remove if next char is an identifier */
 		if (format[i] == '%')			/* if yes, check the next char in format to decdide what to do */
 		{
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			{
 				f = structarr(format[i + 1]);   /* set f to a function or NULL */
 				if (f != NULL)			/* if f is not NULL it contains the function to use */
-				{	
+				{
 					count = count - 1;		/* count now doesn't include the % */
 					count = count + f(args);	/* count increased by length of print by function call */
 					i++;				/* move to next char as we used i + 1 as well */

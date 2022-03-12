@@ -16,12 +16,12 @@ int (*structarr(char id_type))(va_list)
 		{'s', print_string},
 		{'d', print_int},
 		{'b', print_bin},
-		{'x', print_l_hex},
+		{'x', print_hex},
 		{'u', print_uns},
 		{'o', print_oct},
-		{'X', print_u_hex},
-/*		{'p', print_void},*/
-		{'\0', NULL},
+/**		{'X', print_hex},
+ *		{'p', print_void},
+ */		{'\0', NULL},
 	};
 
 	for (index = 0; mystruct[index].ch != '\0'; index++)
