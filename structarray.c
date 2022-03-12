@@ -2,11 +2,11 @@
 
 /**
  * structarr - checks for valid specifier
- *@format: character to check
+ *@id_type: character to check
  * Return: pointer to function
  */
 
-int (*structarr(const char *format))(va_list)
+int (*structarr(char id_type))(va_list)
 {
 
 	int index;
@@ -14,15 +14,23 @@ int (*structarr(const char *format))(va_list)
 		{"c", print_char},
 		{"i", print_int},
 		{"s", print_string},
-		{NULL, NULL},
+		{"d", print_int},
+		{"x", print_hex},
+		{"u", print_uns},
+		{"x", print_hex},
+		{"o", print_oct},
+		{"X", print_hex},
+		{"p", print_void},
+		{'\0', NULL},
 	};
 
-	for (index = 0; mystruct[index].ch != NULL; index++)
+	for (index = 0; mystruct[index].ch != '\0'; index++)
 	{
-		if (*(mystruct[index].ch) == *format)
+		if (*(mystruct[index].ch) == id_type)
 		{
 			break;
 		}
-		return (mystruct[index].f);
+
 	}
+		return (mystruct[index].f);
 }
