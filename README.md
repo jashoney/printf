@@ -38,12 +38,18 @@ All prototypes can be viewed in the main.h file also.
 
 
 `int print_u_hex(va_list args);`
+
+
 -----------------
 # Program compilation
 
 Our program was compiled using the following compilation flags:
 
+
+
 `$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c`
+
+
 -------------------
 # Specifiers
 
