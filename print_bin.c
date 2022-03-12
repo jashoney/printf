@@ -8,7 +8,7 @@
  */
 int print_bin(va_list args)
 {
-	int i = 0, count = 0, init_number;
+	int i = 0, count = 0;
 	unsigned int number = 0;
 	int binarray[100];
 
