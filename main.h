@@ -12,13 +12,13 @@
 
 typedef struct funcstruct
 {
-	char *ch;
+	char ch;
 	int (*f)(va_list);
 } func_struct;
-int (*structarr(const char *format))(va_list);
-int print_char(va_list *vargs);
-int print_string(va_list *vargs);
+int (*structarr(char ch))(va_list);
+int print_char(va_list vargs);
+int print_string(va_list vargs);
 int _printf(const char *format, ...);
 int _putchar(char c);
-int print_string(va_list *args);
+int print_int(va_list args);
 #endif

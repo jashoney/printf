@@ -11,22 +11,22 @@ int _printf(const char *format, ...)
 {
 	int count = 0, i = 0, j = 0;			/* we return (count = strlen(format)) + loop variables */
 	int (*f)(va_list);				/* f is a ptr to a function that takes a va_list type as input and returns an int */
+	va_list args;					/* args is of type va_list */
 
 	if (format == NULL)				/* test format for NULL */
 		return (-1);
-	vi_list args;					/* function call argv is called vargs */
-	vi_start (args, format);			/* start moving through vargs after format */
-
-	for (i = 0, format[i] != '\0', i++)		/* move across format */
+	va_start (args, format);			/* start moving through vargs after format */
+	for (i = 0; format[i] != '\0'; i++)		/* move across format */
 	{	
+		count++;
 		if (format[i] == '%')
 		{
-			count++;			/* saves space in _printf */
 			if (format[i + 1] == '%' || format[i + 1] == '\0')  /* next char is % or end of string */
 			{
 				_putchar(format[i]);		/* print the % */
 				if (format[i + 1] == '\0')	/* stop if at end of string */
 					return (count);
+				i++;				/* ignore the second % */
 			}
 			else 					/* check for identifier */
 			{
@@ -38,10 +38,8 @@ int _printf(const char *format, ...)
 					i++;				/* move to next char as we used i + 1 as well */
 				}
 				else
-					_putchar(format[i]);	/* identifier not found */
+					_putchar(format[i]);	/* identifier not found, print the % */
 			}
-			else 
-				_putchar(format[i]);    /* print the % */
 		}
 		else
 			_putchar(format[i]);  		/* print current char in string format */

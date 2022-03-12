@@ -6,11 +6,11 @@
  * @args: ptr to the va_list we are moving through
  * Return: strlen
  */
-int print_string(va_list *vargs)
+int print_string(va_list args)
 {
         char *c, count = 0;
 
-        c = va_arg(*vargs, char *)
+        c = va_arg(args, char *);
         if (c != NULL)
         {
                 while (*c != '\0')

@@ -6,11 +6,11 @@
  * @args: ptr to the va_list
  * Return: count of digits
  */
-int print_int(va_list *vargs)
+int print_int(va_list args)
 {
         int number, count = 0;
 
-        number = va_arg(*vargs, int);
+        number = va_arg(args, int);
         if (number < 0)
         {
                 _putchar('-');
