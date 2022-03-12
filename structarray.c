@@ -14,6 +14,7 @@ int (*structarr(const char *format))(va_list)
 		{"c", print_char},
 		{"i", print_int},
 		{"s", print_string},
+		{"d", print_int},
 		{NULL, NULL},
 	};
 
