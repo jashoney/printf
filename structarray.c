@@ -12,16 +12,17 @@ int (*structarr(char id_type))(va_list)
 	int index;
 	func_struct mystruct[] = {
 		{'c', print_char},
+		/*	{'R', print_rot},*/
 		{'i', print_int},
 		{'s', print_string},
 		{'d', print_int},
-/*		{'b', print_bin},*/
-		{'x', print_u_hex},
+		{'b', print_bin},
+		{'x', print_l_hex},
 		{'u', print_uns},
 		{'o', print_oct},
-/**		{'X', print_hex},
- *		{'p', print_void},
- */		{'\0', NULL},
+		{'X', print_u_hex},
+/* 		{'p', print_void},*/
+		{'\0', NULL},
 	};
 
 	for (index = 0; mystruct[index].ch != '\0'; index++)
