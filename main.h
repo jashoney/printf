@@ -15,7 +15,7 @@ typedef struct funcstruct
 	int (*f)(va_list);
 } func_struct;
 
-int print_rot(char *s);
+int print_rot(va_list args);
 int print_S_string(va_list args);
 int (*structarr(char ch))(va_list);
 int print_char(va_list vargs);
