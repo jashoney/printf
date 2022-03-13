@@ -9,7 +9,7 @@
 int print_string(va_list args)
 {
 	char *c;
-	int count = 0;
+	int i, count = 0;
 
 	c = va_arg(args, char *);
 	if (c == NULL)
@@ -17,11 +17,17 @@ int print_string(va_list args)
 		c = "(NULL)";
 		count = 6;
 	}
-	while (*c != '\0')
+	else
 	{
-		_putchar(*c);
-		c++;
-		count++;
+		while (c[i] != '\0')
+			i++;
+		count = i;
+		i = 0;
+	}
+	while (c[i] != '\0')
+	{
+		_putchar(c[i]);
+		i++;
 	}
 	return (count);
 }
