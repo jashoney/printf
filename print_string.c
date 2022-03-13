@@ -14,7 +14,8 @@ int print_string(va_list args)
 	c = va_arg(args, char *);
 	if (c == NULL)
 	{
-		c = "NULL";
+		c = "(NULL)";
+		count = 6;
 	}
 	while (*c != '\0')
 	{
