@@ -35,7 +35,6 @@ int print_S_string(va_list args)
 					dest[0] = (convert[hexnumber + '0']);
 					_putchar(dest[0]);
 					_putchar(dest[1]);
-					printf("*c > 16");
 				}
 			}
 			else
