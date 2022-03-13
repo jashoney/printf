@@ -21,6 +21,7 @@ int print_bin(va_list args)
 		number = number / 2;
 	}
 	binarray[i] = number;
+	count++;
 	while (i >= 0)
 	{
 		_putchar(binarray[i] + '0');
