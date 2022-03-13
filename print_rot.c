@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_rot13 - print a string encoded in rot13
+ * print_rot - print a string encoded in rot13
  * @args: the va_list with the string to print as the next element
  * Return: count
  */
