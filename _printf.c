@@ -10,7 +10,6 @@
 int _printf(const char *format, ...)
 {
 	int count = 0, i = 0;				/* we return (count = strlen(output) */
-
 	int (*f)(va_list);				/* f is a ptr to a f() */
 	va_list args;					/* args is of type va_list */
 
@@ -19,7 +18,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);				/* start moving through vargs after format */
 	for (i = 0; format[i] != '\0'; i++)		/* move across format */
 	{
-		count++;				/* increment count, remove if next char is an identifier */
+		count++;				/* assum printing current char, remove if not */
 		if (format[i] == '%')			/* if yes, check the next char in format */
 		{
 			if (format[i + 1] == '%' ||
@@ -35,7 +34,6 @@ int _printf(const char *format, ...)
 				f = structarr(format[i + 1]);   /* set f to a function or NULL */
 				if (f != NULL)			/* if f is not NULL it contains the function to use */
 				{
-					count = count - 1;		/* count now doesn't include the % */
 					count = count + f(args);	/* length of print by f() call added */
 					i++;				/* move on to next char after identifier */
 				}
