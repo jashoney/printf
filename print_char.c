@@ -9,8 +9,12 @@
 int print_char(va_list args)
 {
 	char c;
+	int error;
 
 	c = va_arg(args, int);
-	_putchar(c);
-	return (1);
+	error =	_putchar(c);
+	if (error == -1)
+		return (0);
+	else
+		return (1);
 }

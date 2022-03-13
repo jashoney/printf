@@ -34,6 +34,7 @@ int _printf(const char *format, ...)
 				f = structarr(format[i + 1]);   /* set f to a function or NULL */
 				if (f != NULL)			/* if f is not NULL it contains the function to use */
 				{
+					count--;			/* we're not printing the % */
 					count = count + f(args);	/* length of print by f() call added */
 					i++;				/* move on to next char after identifier */
 				}
