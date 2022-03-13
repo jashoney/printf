@@ -21,6 +21,7 @@ int print_oct(va_list args)
 		number = number / 8;
 	}
 	octarray[i] = number;
+	count++;
 	while (i >= 0)
 	{
 		_putchar(octarray[i] + '0');

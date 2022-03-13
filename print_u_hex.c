@@ -23,7 +23,6 @@ int print_u_hex(va_list args)
 	}
 	hexarray[i] = convert[number % 16];
 	count++;
-	i++;
 	while (i >= 0)
 	{
 		_putchar(hexarray[i]);

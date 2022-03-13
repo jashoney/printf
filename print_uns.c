@@ -21,6 +21,7 @@ int print_uns(va_list args)
 		number = number / 10;
 	}
 	numarray[i] = number;
+	count++;
 	while (i >= 0)
 	{
 		_putchar(numarray[i] + '0');
