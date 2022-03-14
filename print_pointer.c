@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdarg.h>
-#include <stdio.h>
 
 /**
  * print_pointer - prints the address of a pointer
@@ -17,6 +16,7 @@ int print_pointer(va_list args)
 	hex = va_arg(args, unsigned long);
 	_putchar('0');
 	_putchar('x');
+	count = 2;
 	while (hex > 15)
 	{
 		hexarray[i] = convert[hex % 16];
