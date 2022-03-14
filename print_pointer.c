@@ -10,27 +10,24 @@
 int print_pointer(va_list args)
 {
 	int i = 0, count = 0;
-	unsigned long p;
-	unsigned int number = 0;
-	char convert[] = "0123456789ABCDEF";
-	char *hexarray;
+	unsigned long hex;
+	char *convert = "0123456789abcdef";
+	char hexarray[20];
 
-	p = va_arg(args, unsigned long);
+	hex = va_arg(args, unsigned long);
 	_putchar('0');
 	_putchar('x');
-	while (p > 15)
+	while (hex > 15)
 	{
-		hexarray[i] = convert[p % 16];
-		p = p / 16;
+		hexarray[i] = convert[hex % 16];
+		hex = hex / 16;
 		i++;
-		count++;
 	}
-	hexarray[i] = convert[p % 16];
-	count++;
-	i++;
+	hexarray[i] = convert[hex % 16];
 	while (i >= 0)
 	{
 		_putchar(hexarray[i]);
+		count++;
 		i--;
 	}
 	return (count);
