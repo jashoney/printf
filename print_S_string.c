@@ -13,46 +13,37 @@ int print_S_string(va_list args)
 	char *convert = "0123456789ABCDEF";
 
 	c = va_arg(args, char *);
-	if (c != NULL)
+	if (c == NULL)
+		c = "(NULL)";
+	while (c[i] != '\0')
 	{
-		while (c[i] != '\0')
+		if (c[i] < 32 || c[i] > 126)
 		{
-			if (c[i] < 32 || c[i] > 126)
+			count = count + 4;
+			_putchar(92);
+			_putchar('x');
+			if (c[i] < 16)
 			{
-				count = count + 4;
-				_putchar(92);
-				_putchar('x');
-				if (c[i] < 16)
-				{
-					_putchar('0');
-					_putchar(convert[c[i] + 0]);
-				}
-				else if (c[i] > 126)
-				{	
-					_putchar('7');
-					_putchar('F');
-				}
-				else
-				{
-					_putchar('1');
-					c[i] = c[i] % 16;
-					_putchar(convert[c[i] + '0']);
-				}
+				_putchar('0');
+				_putchar(convert[c[i] + 0]);
+			}
+			else if (c[i] > 126)
+			{
+				_putchar('7');
+				_putchar('F');
 			}
 			else
 			{
-				_putchar(c[i]);
-				count++;
+				_putchar('1');
+				c[i] = c[i] % 16;
+				_putchar(convert[c[i] + '0']);
 			}
-			i++;
 		}
-	}
-	else
-	{
-		c = "(NULL)";
-		count = 6;
-		while (i < count)
-			_putchar(c[i]); 
+		else
+		{
+			_putchar(c[i]);
+			count++;
+		}
 		i++;
 	}
 	return (count);
