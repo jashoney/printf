@@ -11,6 +11,8 @@ int print_rev(va_list args)
 	int i = 0, count;
 
 	s = va_arg(args, char*);
+	if (s == NULL)
+		return (0);
 	while (s[i] != '\0')
 	{
 		i++;
