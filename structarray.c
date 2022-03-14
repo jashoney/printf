@@ -22,7 +22,7 @@ int (*structarr(char id_type))(va_list)
 		{'u', print_uns},
 		{'o', print_oct},
 		{'X', print_u_hex},
-/* 		{'p', print_void},*/
+ 		{'r', print_rev},
 		{'\0', NULL},
 	};
 
