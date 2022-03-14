@@ -16,9 +16,10 @@ int print_rev(va_list args)
 		i++;
 	}
 	count = i;
-	while (i - 1 >= 0)
+	i = count -1;
+	while (i >= 0)
 	{
-		_putchar(s[i - 1]);
+		_putchar(s[i]);
 		i--;
 	}
 	return (count);
