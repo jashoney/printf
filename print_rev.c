@@ -12,13 +12,15 @@ int print_rev(va_list args)
 
 	s = va_arg(args, char*);
 	if (s == NULL)
+	{
 		s = "(LLUN)";
 		i = 3;
-		count = 6666else
+		count = 0;
+	}
+	else
 	{
-		while (s[i] != '\0')
-			i++;
-		count = i;
+		while (s[count] != '\0')
+			count++;
 		i = count - 1;
 	}
 	while (i >= 0)
