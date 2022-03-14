@@ -12,7 +12,7 @@ int (*structarr(char id_type))(va_list)
 	int index;
 	func_struct mystruct[] = {
 		{'c', print_char},
-		/*	{'R', print_rot},*/
+		{'R', print_rot},
 		{'S', print_S_string},
 		{'i', print_int},
 		{'s', print_string},
