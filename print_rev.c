@@ -14,6 +14,7 @@ int print_rev(va_list args)
 	if (s == NULL)
 		s = "(LLUN)";
 		i = 3;
+		count = 0;
 	else
 	{
 		while (s[i] != '\0')
