@@ -2,7 +2,7 @@
 #include <stdarg.h>
 /**
 * print_rev - print a reverse a string
-* @x: string
+* @args: string
 * Return: bytes printed
 **/
 int print_rev(va_list args)
