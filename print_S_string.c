@@ -8,42 +8,52 @@
  */
 int print_S_string(va_list args)
 {
-	unsigned int count = 0, hexnumber;
-	char dest[3] = "00", *c;
+	unsigned int count = 0, i = 0;
+	char *c;
 	char *convert = "0123456789ABCDEF";
 
 	c = va_arg(args, char *);
 	if (c != NULL)
 	{
-		while (*c != '\0')
+		while (c[i] != '\0')
 		{
-			if (*c < 32 || *c > 126)
+			if (c[i] < 32 || c[i] > 126)
 			{
 				count = count + 4;
 				_putchar(92);
 				_putchar('x');
-				if (*c < 16)
+				if (c[i] < 16)
 				{
 					_putchar('0');
-					_putchar(convert[*c + 0]);
+					_putchar(convert[c[i] + 0]);
+				}
+				else if (c[i] > 126)
+				{	
+					_putchar('7');
+					_putchar('F');
 				}
 				else
 				{
-					hexnumber = *c % 16;
-					dest[1] = (convert[hexnumber + '0']);
-					hexnumber = *c / 16;
-					dest[0] = (convert[hexnumber + '0']);
-					_putchar(dest[0]);
-					_putchar(dest[1]);
+					_putchar('1');
+					c[i] = c[i] % 16;
+					_putchar(convert[c[i] + '0']);
 				}
 			}
 			else
 			{
-				_putchar(*c);
+				_putchar(c[i]);
 				count++;
 			}
-			c++;
+			i++;
 		}
+	}
+	else
+	{
+		c = "(NULL)";
+		count = 6;
+		while (i < count)
+			_putchar(c[i]); 
+		i++;
 	}
 	return (count);
 }
