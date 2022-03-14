@@ -23,6 +23,7 @@ int (*structarr(char id_type))(va_list)
 		{'o', print_oct},
 		{'X', print_u_hex},
  		{'r', print_rev},
+		{'p', print_pointer},
 		{'\0', NULL},
 	};
 
