@@ -10,7 +10,7 @@ int print_rev(va_list args)
 	char *s;
 	int i = 0, count;
 
-	if (args == NULL)
+	if (s == NULL)
 	{
 		return (0);
 	}
