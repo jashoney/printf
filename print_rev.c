@@ -10,10 +10,6 @@ int print_rev(va_list args)
 	char *s;
 	int i = 0, count;
 
-	if (s == NULL)
-	{
-		s = ")llun("
-	}
 	s = va_arg(args, char*);
 	while (s[i] != '\0')
 	{
