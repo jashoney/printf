@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	va_list args;					/* args is of type va_list */
 
 	if (format == NULL)				/* test format for NULL */
-		return (0);
+		return (-1);
 	va_start(args, format);				/* start moving through vargs after format */
 	for (i = 0; format[i] != '\0'; i++)		/* move across format */
 	{
