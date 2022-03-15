@@ -1,6 +1,4 @@
-.TH PRINTF"14 Mar 2022"
-
-\” Copyright 2004, 2006, 2010 Kimball Hawkins <khawkins@acm.org>.
+.TH _printf man page "15 march 2022"
 
 .SH NAME
 _printf
@@ -15,54 +13,112 @@ conversion specifiers that are described below.
 .SS
 The specifiers are as follows:
 
-.SS
+.PP
 c:
-The int argument is converted to an unsigned char, and
+ The int argument is converted to an unsigned char, and
 the resulting character is written.
 
-.SS
+.PP
 R:
-The char* argument is a pointer to an array of characters
+ The char* argument is a pointer to an array of characters
 (pointer to a string). Characters from the array are outputted
 in ROT13 up to (but not including) the terminating NULL character.
 
-S
-.SS
+.PP
+S:
+A non printable character is converted into a \x, followed by
+the ASCII code value in upper case hexadecimal notation.
+
+.PP
 i, d:
 The integer argument is converted into signed decimal
 notation.
 
-.SS
+.PP
 s:
 The char* argument is a pointer to to an array of
 characters (pointer to a string). Characters from
 the array are outputted up to (but not including) the
 terminating NULL character.
 
-.SS
+.PP
 b:
 The int argument is convereted into binary notation.
 
-.SS
+.PP
 x, X:
 The unsigned int argument is converted to unsigned hexadecimal
 notation. The lettes abcdef are used for x conversions and the
 letters ABCDEF are used for X conversions.
 
-.SS
+.PP
 u:
 The unsigned integer argument is converted into an unsigned
 decimal notation.
-.SS
 
+.PP
 o:
 The unsigned integer argument is convereted into unsigned
 octal notation.
 
-.SS
+.PP
 r:
 The char* argument is a pointer to an array of characters
 (pointer to a string). Characters from the array are outputted
 in reverse upto (but not including) the terminating NULL character.
 
-MORE SPECS TO ADD----------------------------------------------------
+.PP
+p:
+The char* argument is a pointer to an array. The address of the pointer
+is outputted.
+
+.SH RETURN VALUE
+
+Upon successful return, these functions return the number of characters
+printed (excluding the null byte used to end ouput to strings). If an
+output error occurs, a negative value is returned.
+
+.SH EXAMPLES
+.PP
+To print integers in decimal notation:
+
+_printf("integer:[%d, %i\\n]", int, int2);
+
+To print in unsigned octal:
+
+_printf("Unsigned octal:[%o]\\n", uo);
+
+To print in unsigned hexadecimal:
+
+_printf("Unsigned hexadecimal:[%x, %X]\\n", uh, uh);
+
+To print a char:
+
+_printf("Character:[%c]\\n", 'H');
+
+To print a string:
+
+_printf("String:[%s]\\n", "I am a string !");
+
+To print a string in reverse:
+
+_printf("Reverse string:[%r]\\n", string);
+
+To print in ROT13:
+
+_printf("ROT13:[%R]\\n", string);
+
+To print in binary:
+
+_printf("binary:[%b]\\n", bin);
+
+To print the address of a pointer:
+
+_printf("Address:[%p]\\n", addr);
+
+.SH SEE ALSO
+man printf(3)
+
+.SH AUTHOR
+James Honey, Declan Noble.
+
