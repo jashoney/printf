@@ -1,13 +1,18 @@
-# printf
+# _printf Project
+
+This is a project to create our own printf function
+
+
 -----------------
-## This project was completed by James Honey and Declan Noble as apart of
-the holberton low level programming curriculum.
------------------
+
 # Function Prototypes
 
 All prototypes can be viewed in the main.h file also.
 
-`int _printf(const char *format, ...);`
+`int print_rot(va_list args);`
+
+
+`int print_S_string(va_list args);`
 
 
 `int (*structarr(char ch))(va_list);`
@@ -17,6 +22,9 @@ All prototypes can be viewed in the main.h file also.
 
 
 `int print_string(va_list vargs);`
+
+
+`int _printf(const char *format, ...);`
 
 
 `int _putchar(char c);`
@@ -40,6 +48,13 @@ All prototypes can be viewed in the main.h file also.
 `int print_u_hex(va_list args);`
 
 
+`int print_rev(va_list args);`
+
+
+`int print_pointer(va_list args);`
+
+
+`int _strlen(char *s);`
 -----------------
 # Program compilation
 
@@ -51,23 +66,5 @@ Our program was compiled using the following compilation flags:
 
 
 -------------------
-# Specifiers
-
-d
-
-i
-
-c
-
-s
-
-u
-
-o
-
-x
-
-X
-
-%
-(awaiting description)
+## This project was completed as a part of the Holberton
+curriculum by James Honey and Declan Noble.
