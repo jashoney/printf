@@ -66,5 +66,4 @@ Our program was compiled using the following compilation flags:
 
 
 -------------------
-## This project was completed as a part of the Holberton
-curriculum by James Honey and Declan Noble.
+This project was completed as a part of the Holberton by James Honey and Declan Noble.
