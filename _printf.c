@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	va_list args;					/* args is of type va_list */
 
 	if (format == NULL)				/* test format for NULL */
-		return (-1);
+		return (0);
 	va_start(args, format);				/* start moving through vargs after format */
 	for (i = 0; format[i] != '\0'; i++)		/* move across format */
 	{
@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 					return (count);
 				i++;				/* next char = %, but don't print it */
 			}
-		else						/* check for identifier using format[i + 1] */
+			else					/* check for identifier using format[i + 1] */
 			{
 				f = structarr(format[i + 1]);   /* set f to a function or NULL */
 				if (f != NULL)			/* if f is not NULL it contains the function to use */
