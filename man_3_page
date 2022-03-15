@@ -1,33 +1,68 @@
-PRINTF
+.TH PRINTF"14 Mar 2022"
 
-NAME
-printf
+\” Copyright 2004, 2006, 2010 Kimball Hawkins <khawkins@acm.org>.
 
-SYNOPSIS
-#include "main.h"
+.SH NAME
+_printf
 
-int _printf(const char *format, ...);
+.SH SYNOPSIS
+_printf(const char *format, ...);
 
-DESCRIPTION
-The printf function produces output according to included formatting.
+.SH DESCRIPTION
+The printf function produces output in compliance with certain format and
+conversion specifiers that are described below.
 
+.SS
+The specifiers are as follows:
 
-FORMAT SPECIFIERS
+.SS
+c:
+The int argument is converted to an unsigned char, and
+the resulting character is written.
 
-d,
-prints in a decimal notation
---------------
-i,
-prints in an integer notation
---------------
-u,
-prints in unsigned notation
---------------
-o,
-The argument is printed in octal notation
---------------
-x,X
-prints in unsigned hexadecimal notation
---------------
-b,
-prints in binary notation
+.SS
+R:
+The char* argument is a pointer to an array of characters
+(pointer to a string). Characters from the array are outputted
+in ROT13 up to (but not including) the terminating NULL character.
+
+S
+.SS
+i, d:
+The integer argument is converted into signed decimal
+notation.
+
+.SS
+s:
+The char* argument is a pointer to to an array of
+characters (pointer to a string). Characters from
+the array are outputted up to (but not including) the
+terminating NULL character.
+
+.SS
+b:
+The int argument is convereted into binary notation.
+
+.SS
+x, X:
+The unsigned int argument is converted to unsigned hexadecimal
+notation. The lettes abcdef are used for x conversions and the
+letters ABCDEF are used for X conversions.
+
+.SS
+u:
+The unsigned integer argument is converted into an unsigned
+decimal notation.
+.SS
+
+o:
+The unsigned integer argument is convereted into unsigned
+octal notation.
+
+.SS
+r:
+The char* argument is a pointer to an array of characters
+(pointer to a string). Characters from the array are outputted
+in reverse upto (but not including) the terminating NULL character.
+
+MORE SPECS TO ADD----------------------------------------------------
