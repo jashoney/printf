@@ -4,6 +4,9 @@
 _printf
 
 .SH SYNOPSIS
+
+#include "main.h"
+
 _printf(const char *format, ...);
 
 .SH DESCRIPTION
@@ -18,56 +21,46 @@ c:
  The int argument is converted to an unsigned char, and
 the resulting character is written.
 
-.PP
 R:
  The char* argument is a pointer to an array of characters
 (pointer to a string). Characters from the array are outputted
 in ROT13 up to (but not including) the terminating NULL character.
 
-.PP
 S:
 A non printable character is converted into a \x, followed by
 the ASCII code value in upper case hexadecimal notation.
 
-.PP
 i, d:
 The integer argument is converted into signed decimal
 notation.
 
-.PP
 s:
 The char* argument is a pointer to to an array of
 characters (pointer to a string). Characters from
 the array are outputted up to (but not including) the
 terminating NULL character.
 
-.PP
 b:
 The int argument is convereted into binary notation.
 
-.PP
 x, X:
 The unsigned int argument is converted to unsigned hexadecimal
 notation. The lettes abcdef are used for x conversions and the
 letters ABCDEF are used for X conversions.
 
-.PP
 u:
 The unsigned integer argument is converted into an unsigned
 decimal notation.
 
-.PP
 o:
 The unsigned integer argument is convereted into unsigned
 octal notation.
 
-.PP
 r:
 The char* argument is a pointer to an array of characters
 (pointer to a string). Characters from the array are outputted
 in reverse upto (but not including) the terminating NULL character.
 
-.PP
 p:
 The char* argument is a pointer to an array. The address of the pointer
 is outputted.
@@ -79,8 +72,8 @@ printed (excluding the null byte used to end ouput to strings). If an
 output error occurs, a negative value is returned.
 
 .SH EXAMPLES
-.PP
-To print integers in decimal notation:
+
+ To print integers in decimal notation:
 
 _printf("integer:[%d, %i\\n]", int, int2);
 
